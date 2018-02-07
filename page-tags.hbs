@@ -7,6 +7,7 @@
   <div class="wrapper-container">
 
     <h1> Tags </h1>
+    <br>
     {{! Tag Cloud }}
     {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
         {{#foreach tags}}
@@ -16,7 +17,9 @@
         </a> &nbsp; &nbsp; &nbsp;
         {{/foreach}}
     {{/get}}
-    <article class="archives"></article>
+
+    <br></br>
+    {{> footer this}}
   </div>
 
 </section>
