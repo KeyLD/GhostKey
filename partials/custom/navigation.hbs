@@ -25,6 +25,7 @@ Ghostium uses Font Awesome you can find all icons available on the url below
 
 }}
 
+
 <li class="drawer-list-item">
   <a href="/" data-pjax>
     <i class="fa fa-home"></i>Home
@@ -40,12 +41,23 @@ Ghostium uses Font Awesome you can find all icons available on the url below
   Follow me
 </li>
 <li class="drawer-list-item">
-  <a href="http://twitter.com" target="_blank">
+  <a href="http://twitter.com/Key_v2" target="_blank">
     <i class="fa fa-twitter"></i>Twitter
   </a>
 </li>
 <li class="drawer-list-item">
-  <a href="http://github.com" target="_blank">
+  <a href="http://github.com/KeyLD" target="_blank">
     <i class="fa fa-github"></i>Github
   </a>
 </li>
+
+{{! Tag Cloud }}
+{{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+    {{#foreach tags}}
+        <li class="drawer-list-item">
+          <a href="/tag/{{slug}}">
+            <i class="fa fa-tag"></i>{{name}} ({{count.posts}})
+          </a>
+        </li>
+    {{/foreach}}
+{{/get}}
