@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{> cover this}}
+
+<section class="wrapper" tabindex="0">
+
+  <div class="wrapper-container">
+
+    <h1> Tags </h1>
+    {{! Tag Cloud }}
+    {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+        {{#foreach tags}}
+        &nbsp;
+        <a href="/tag/{{slug}}" class="tag-item">
+          <i class="fa fa-tag">{{name}}</i><span></span>
+        </a> &nbsp; &nbsp; &nbsp;
+        {{/foreach}}
+    {{/get}}
+    <article class="archives"></article>
+  </div>
+
+</section>
+

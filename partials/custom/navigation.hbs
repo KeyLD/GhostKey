@@ -31,33 +31,38 @@ Ghostium uses Font Awesome you can find all icons available on the url below
     <i class="fa fa-home"></i>Home
   </a>
 </li>
+
+<li class="drawer-list-item">
+  <a href="{{@blog.url}}/archives/">
+    <i class="fa fa-archive"></i>Archives
+  </a>
+</li>
+
+<li class="drawer-list-item">
+  <a href="{{@blog.url}}/tags/">
+    <i class="fa fa-tags"></i>Tags
+  </a>
+</li>
+
 <li class="drawer-list-item">
   <a href="{{@blog.url}}/rss/">
     <i class="fa fa-rss"></i>Subscribe to Feed
   </a>
 </li>
+
 <li class="drawer-list-divider"></li>
 <li class="drawer-list-item drawer-list-title">
   Follow me
 </li>
+
 <li class="drawer-list-item">
   <a href="http://twitter.com/Key_v2" target="_blank">
     <i class="fa fa-twitter"></i>Twitter
   </a>
 </li>
+
 <li class="drawer-list-item">
   <a href="http://github.com/KeyLD" target="_blank">
     <i class="fa fa-github"></i>Github
   </a>
 </li>
-
-{{! Tag Cloud }}
-{{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
-    {{#foreach tags}}
-        <li class="drawer-list-item">
-          <a href="/tag/{{slug}}">
-            <i class="fa fa-tag"></i>{{name}} ({{count.posts}})
-          </a>
-        </li>
-    {{/foreach}}
-{{/get}}
